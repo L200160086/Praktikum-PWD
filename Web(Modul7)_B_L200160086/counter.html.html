@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Counter</title>
+<script>
+function countmax(){
+var wert, max;
+max = 100
+wert = max- (document.form1.question.value.length);
+if (wert < 0){
+alert("maaf batas maksimum pengisian adalah " +max + " karakter!");
+document.form1.question.value = document.form1.question.value.substring(0, max);
+wert = max-(document.form1.question.value.length);
+document.form1.rv_counter.value = wert;
+} else {
+document.form1.rv_counter.value = max-(document.form1.question.value.length);
+}
+}
+</script>
+</head>
+<body>
+<form name ="form1" method="post" action="">
+<textarea name ="question" cols="60" rows="3" id="question" onfocus="countmax();"
+onclick="countmax();" ONCHANGE="countmax();"
+onkeydown="countmax();"
+onkeyup="countmax();" wrap="virtual"></textarea>
+<font face="arial, heltevica,sans-serif,bookman old style, comic sans ms,
+" size="2"> sisa
+<input name="rv_counter" type="TEXT" size="3" maxlength="3" value="100" readonly></form>
+</body>
+</html>
